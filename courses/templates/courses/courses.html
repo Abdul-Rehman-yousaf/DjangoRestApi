@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Curses</title>
+</head>
+<body ng-app="courses">
+    {% verbatim %}
+    <div ng-controller="coursesCtrl">
+        <h1>{{ person.name }} is {{ person.age }} years old.</h1>
+    </div>
+    {% endverbatim %}
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script>
+        (function(){
+            'use strict';
+            angular.module('courses', [])
+                .controller('coursesCtrl',['$scope', coursesCtrl]);
+            function coursesCtrl($scope) {
+                $scope.person = {
+                    name : 'joe',
+                    age: '20'
+                };
+            }
+        }());
+    </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 from django.conf.urls import url
-
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
         url(r'^(?P<course_pk>\d+)/reviews/(?P<pk>\d+)/$',
             views.RetrieveUpdateDestroyReview,
             name='review_detail'),
+        url(r'^home', TemplateView.as_view(template_name='courses/courses.html'), name='courses')
 ]
